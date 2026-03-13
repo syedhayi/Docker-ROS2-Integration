@@ -83,7 +83,7 @@ Now, Let's start setting up the container
 	docker compose exec -it jazzy_dev bash
 ```
 
-> Note: To get your service_name, change directory to where the docker-compose.yml file is and run `docker compose ps` 
+> Note: To get your container's `NAME`, change directory to where the docker-compose.yml file is and run `docker compose ps` 
 > ```bash 
 > output:
 > NAME        IMAGE               COMMAND                  SERVICE      CREATED        STATUS         PORTS
