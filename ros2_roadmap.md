@@ -72,5 +72,5 @@
 
 ## 📚 Quick Resources
 * [ROS 2 Jazzy Official Documentation](https://docs.ros.org/en/jazzy/)
-* [MoveIt 2 Tutorials](https://moveit.picknik.ai/jazzy/index.html)
-* [Nav2 Documentation](https://navigation.ros.org/)
+* [MoveIt 2 Documentation](https://moveit.picknik.ai/main/index.html)
+* [Nav2 Documentation](https://docs.nav2.org/)
