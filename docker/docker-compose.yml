@@ -1,0 +1,47 @@
+services:
+  ros2_jazzy:
+    build: 
+      context: .
+      # target: base  # <--- THIS IS FOR ONLY BASE
+      target: desktop  # <--- THIS IS FOR DESKTOP
+      args:
+        # This is your single point of control for Jazzy vs Kilted
+        - ROS_DISTRO=jazzy
+    container_name: ${ROS_DISTRO:-jazzy}_dev
+    network_mode: host
+    ipc: host
+    ports:
+      - "8765:8765"
+      
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - NVIDIA_VISIBLE_DEVICES=all
+      # Change 'all' to include 'graphics' and 'display' explicitly
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      # Add these two lines to force the NVIDIA library selection:
+      - __NV_PRIME_RENDER_OFFLOAD=1
+      - __GLX_VENDOR_LIBRARY_NAME=nvidia
+      - XDG_RUNTIME_DIR=/tmp/runtime-root
+
+    volumes:
+      # Use ../ to go up one level from the 'docker' folder to 'ros2_ws'
+      # - ../ros2_ws/src:/root/ros2_ws/src
+      - ../ros2_ws/:/root/ros2_ws/
+      # The Bridge for GUI data
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # Add this to allow access to the direct rendering manager
+      - /dev/dri:/dev/dri:rw
+
+    stdin_open: true 
+    tty: true        
+    privileged: true 
+    working_dir: /root/ros2_ws
