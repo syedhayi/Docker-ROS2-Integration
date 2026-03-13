@@ -15,9 +15,9 @@
 ---
 
 ## 🟢 LEVEL 1: CORE CONCEPTS (The Communication Graph)
-- [x] **Linux & Docker:** Terminal mastery, file permissions, and containerizing ROS 2.
-- [x] **Workspace Anatomy:** Mastering `colcon build`, sourcing, and package structures.
-- [x] **Topics (Pub/Sub):** Asynchronous data streams (e.g., Sensor data).
+- [ ] **Linux & Docker:** Terminal mastery, file permissions, and containerizing ROS 2.
+- [ ] **Workspace Anatomy:** Mastering `colcon build`, sourcing, and package structures.
+- [ ] **Topics (Pub/Sub):** Asynchronous data streams (e.g., Sensor data).
 - [ ] **Services (Req/Res):** Synchronous immediate tasks (e.g., Toggle a LED).
 - [ ] **Actions (Goal/Feedback/Result):** Long-running, cancelable tasks (The "Big 4" logic).
 - [ ] **Launch System:** Using Python/XML to automate starting multiple nodes at once.
